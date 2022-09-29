@@ -1,0 +1,18 @@
+version: "3.9"
+volumes:
+  db-store:
+services:
+  rust:
+    container_name: rust
+    build: .
+    tty: true
+    volumes:
+      - ./volume:/work/
+    ports:
+      - 8003:8003
+    networks:
+      - mov-app-net
+
+networks:
+  mov-app-net:
+    driver: bridge
