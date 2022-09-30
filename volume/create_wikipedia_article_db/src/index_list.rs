@@ -17,6 +17,7 @@ pub mod index_list{
         // 一行ごとに読み込み
         for index in BufReader::new(File::open(original_index)?).lines().progress() {
             let l = index?;
+            // 不要タグ除去（Categoryのみ使える可能性あり）
             if !(l.contains("Wikipedia:") || l.contains("(曖昧さ回避)") || l.contains("Category:") || l.contains("Template:") || l.contains("Help:") || l.contains("ファイル:")){
                 // index_filter.push(l);
                 writeln!(file, "{}", &l)?;

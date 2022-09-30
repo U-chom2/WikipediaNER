@@ -7,3 +7,5 @@ edition = "2021"
 
 [dependencies]
 prog_rs = "0.2.0"
+bzip2 = "0.4.3"
+parse_mediawiki_dump = "0.1.0"
