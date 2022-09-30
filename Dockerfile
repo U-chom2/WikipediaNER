@@ -25,7 +25,8 @@ RUN apt-get update \
   && echo "ja_JP UTF-8" > /etc/locale.gen \
   && locale-gen
 
-# RUN echo "install rust tools" \
+RUN echo "install rust tools" \
+  && cargo install prog_rs
 #   && rustup component add rustfmt \
 #   && cargo install cargo-watch cargo-make \
 #   && cargo install sqlx-cli --no-default-features --features mysql
